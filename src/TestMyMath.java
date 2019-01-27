@@ -1,3 +1,5 @@
+
+
 public class TestMyMath {
     public static void main(String[] args) {
 
@@ -66,6 +68,25 @@ public class TestMyMath {
 
         prime = MyMath.isPrime(12345);
         System.out.println("12345 false expected answer = "+ prime);
+
+        int words = MyMath.NumberCount("THE CAT IN THE HAT");
+        System.out.println("5 is expected result = "+words);
+
+        words = MyMath.NumberCount("The Delegation Event model is one of the many techniques used to handle events in GUI (Graphical User Interface) programming languages. GUI represents a system where an user visually or graphically interacts with the system.");
+        System.out.println("35 is expected result = "+words);
+
+        boolean valid = MyMath.Validate("Paulcaff1");
+        System.out.println("valid password : "+valid);
+
+        valid = MyMath.Validate("caff1");
+        System.out.println("Invalid password : "+valid);
+
+        valid = MyMath.Validate("paulcaff1");
+        System.out.println("Invalid password : "+valid);
+
+
+
+
 
 
         }

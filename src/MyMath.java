@@ -1,85 +1,128 @@
 public class MyMath {
 
 
-        public static int smallestNum (int num1,int num2,int num3){
-            int smallest = 0;
+    public static int smallestNum(int num1, int num2, int num3) {
+        int smallest = 0;
 
-            if(num1 < num2 && num1 < num3) {
-                smallest = num1;
-            }
-
-            else if (num2 < num3) {
-                    smallest = num2;
-                }
-                else {
-                    smallest = num3;
-                }
-
-            return smallest;
-
+        if (num1 < num2 && num1 < num3) {
+            smallest = num1;
+        } else if (num2 < num3) {
+            smallest = num2;
+        } else {
+            smallest = num3;
         }
 
-        public static double pow(double a,double b){
+        return smallest;
 
-            double result = a;
+    }
 
-            if(b >= 1){
-               for(int i = 1; i < b; i++ ){
-                   result *= a;
+    public static double pow(double a, double b) {
 
-               }
+        double result = a;
+
+        if (b >= 1) {
+            for (int i = 1; i < b; i++) {
+                result *= a;
 
             }
 
-            return result;
         }
 
+        return result;
+    }
 
-        public static int sumOfNumbers(int n) {
+
+    public static int sumOfNumbers(int n) {
         int total = 0;
 
-        for(int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
 
-            total += i ;
+            total += i;
 
 
         }
 
         return total;
+    }
+
+    public static int factorial(int n) {
+        int factorial = 1;
+
+        for (int i = 1; i <= n; i++) {
+
+            factorial *= i;
         }
 
-        public static int factorial (int n){
-            int factorial = 1;
+        return factorial;
+    }
 
-            for(int i = 1; i <= n; i++){
+    public static boolean isPrime(int x) {
+        boolean ans = false;
 
-                factorial *= i;
-            }
+        if (x == 2) {
+            ans = true;
+        } else if (x != 2) {
+            for (int i = 2; i < x; i++) {
 
-            return factorial;
-        }
-
-        public static boolean isPrime(int x ){
-            boolean ans = false;
-
-            if(x == 2){
-                ans = true;
-            }
-                else if(x !=2) {
-                for (int i = 2; i < x; i++) {
-
-                    if (x % i == 0) {
-                        ans = false;
-                        break;
-                    } else {
-                        ans = true;
-                    }
+                if (x % i == 0) {
+                    ans = false;
+                    break;
+                } else {
+                    ans = true;
                 }
             }
-
-            return ans;
         }
 
-        public static void NumberCount ()
+        return ans;
+    }
 
+    public static int NumberCount(String sentence) {
+        int words = 1;
+
+        for (int i = 1; i < sentence.length(); i++) {
+            if (sentence.charAt(1) == ' ') {
+                words--;
+            }
+
+            if (sentence.charAt(i) == ' ') {
+                words++;
+
+            }
+        }
+
+
+        return words;
+    }
+
+
+    public static boolean Validate(String password) {
+
+        boolean valid = false;
+
+        if (password.length() >= 8) {
+
+            for (int i = 0; i < password.length(); i++) {
+                if (Character.isLowerCase(password.charAt(i))) {
+                    System.out.println("here");
+                }
+                    for (i = 0; i < password.length(); i++) {
+                    if (Character.isUpperCase(password.charAt(i))) {
+                        System.out.println("now here");
+                    }
+                        for (i = 0; i < password.length(); i++) {
+                        if (Character.isDigit(password.charAt(i))) {
+                            valid = true;
+                            break;
+                        }
+                    }
+                }
+
+            }
+
+        }
+            return valid;
+
+
+    }
 }
+
