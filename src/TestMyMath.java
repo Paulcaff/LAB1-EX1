@@ -84,10 +84,12 @@ public class TestMyMath {
         valid = MyMath.Validate("paulcaff1");
         System.out.println("Invalid password : "+valid);
 
+        valid = MyMath.Validate("Srqf8vwq");
+        System.out.println("valid password : "+valid);
 
 
 
-
+        MyMath.NumberCounter(1,2,3,4,5,6);
 
         }
 

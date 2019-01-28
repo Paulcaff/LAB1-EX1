@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class MyMath {
 
 
@@ -98,31 +100,59 @@ public class MyMath {
     public static boolean Validate(String password) {
 
         boolean valid = false;
+        int upper = 0;
+        int lower = 0;
+        int digit = 0;
 
         if (password.length() >= 8) {
 
             for (int i = 0; i < password.length(); i++) {
                 if (Character.isLowerCase(password.charAt(i))) {
-                    System.out.println("here");
+                    lower++;
                 }
-                    for (i = 0; i < password.length(); i++) {
-                    if (Character.isUpperCase(password.charAt(i))) {
-                        System.out.println("now here");
-                    }
-                        for (i = 0; i < password.length(); i++) {
-                        if (Character.isDigit(password.charAt(i))) {
-                            valid = true;
-                            break;
-                        }
-                    }
-                }
-
             }
 
-        }
-            return valid;
+            for (int i = 0; i < password.length(); i++) {
+                if (Character.isUpperCase(password.charAt(i))) {
+                    upper++;
+                        }
+                    }
 
+             for (int i = 0; i < password.length(); i++) {
+                            if (Character.isDigit(password.charAt(i))) {
+                                digit++;
+                            }
+                        }
+                    }
+
+        if(lower > 0 && upper > 0 && digit > 0){
+            System.out.println(lower +" "+upper+" "+digit);
+
+            valid = true;
+        }
+
+            return valid;
+    }
+
+
+    public static void NumberCounter(int a, int b, int c, int d, int e, int f){
+
+        int[] numbers = new int[100];
+
+        for(int i =0; i < 100; i++){
+            numbers[a] ++;
+            numbers[b] ++;
+            numbers[c] ++;
+            numbers[d] ++;
+            numbers[e] ++;
+            numbers[f] ++;
+
+        }
+
+        System.out.println(numbers);
 
     }
+
+
 }
 
